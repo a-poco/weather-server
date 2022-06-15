@@ -1,0 +1,35 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Weather app",
+  "main": "index.js",
+  "engines": {
+    "node": "14.19.1"
+  },
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a-poco/weather-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a-poco/weather-app/issues"
+  },
+  "homepage": "https://github.com/a-poco/weather-app#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "node-fetch": "^3.2.3"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
