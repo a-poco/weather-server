@@ -1,8 +1,8 @@
 import fetch from 'node-fetch';
 import express from "express";
 import 'dotenv/config'
-const url = "https://agile-chamber-37214.herokuapp.com"
-const PORT = process.env.PORT || url
+// const url = "https://agile-chamber-37214.herokuapp.com"
+const PORT = process.env.PORT || 3001
 const app = express();
 
 const getTodaysDate = () => {
@@ -15,7 +15,7 @@ const getTodaysDate = () => {
 app.get("/api", async (req, res) => {
   const cityName = req.query.query
   const weather = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ce99411970192212f1a4e3ce28339cf2&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.SECRET_KEY}&units=metric`
   )
   const data = await weather.json();
 
@@ -27,7 +27,7 @@ app.get("/api", async (req, res) => {
     date: getTodaysDate()
   }
 
-  res.json(response);
+  res.json(response + "hello from server");
 });
 
 app.listen(PORT, () => {
