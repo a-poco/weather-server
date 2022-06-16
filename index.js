@@ -1,7 +1,8 @@
 import fetch from 'node-fetch';
 import express from "express";
 import 'dotenv/config'
-const PORT = process.env.PORT || "https://agile-chamber-37214.herokuapp.com"
+const url = "https://agile-chamber-37214.herokuapp.com"
+const PORT = process.env.PORT || url
 const app = express();
 
 const getTodaysDate = () => {
