@@ -1,12 +1,8 @@
 import fetch from 'node-fetch';
 import express from "express";
 import 'dotenv/config'
-// import path from "path";
-// import { fileURLToPath } from 'url';
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001
 const app = express();
-
-
 
 const getTodaysDate = () => {
   const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
