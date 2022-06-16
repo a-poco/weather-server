@@ -15,7 +15,7 @@ const getTodaysDate = () => {
 app.get("/api", async (req, res) => {
   const cityName = req.query.query
   const weather = await fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${process.env.SECRET_KEY}&units=metric`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=ce99411970192212f1a4e3ce28339cf2&units=metric`
   )
   const data = await weather.json();
 
